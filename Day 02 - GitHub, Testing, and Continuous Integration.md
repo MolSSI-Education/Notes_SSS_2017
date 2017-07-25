@@ -82,9 +82,16 @@ cd friendly_computing_machine
 Now, we begain creating a file called `math.py`.
 
 At the top of the header, write a docstring describing what your file does:
-```
+```python
 """
 A small set of functions for doing math operations.
 """
 ```
-Now we can start writing functions.
+Now we can start writing functions. Let's write a function that adds two numbers:
+```python
+def add(arg1, arg2):
+    """
+    Function that adds two arguments.
+    """
+    return 2 + 5
+```
