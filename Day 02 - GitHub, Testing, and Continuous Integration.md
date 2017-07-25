@@ -131,15 +131,15 @@ Now we can go back to our base git directory `fcm/`, which we can now import
 >>> fcm.math.add(2,5)
 7
 ```
-What if we also want to be able to multiply, using the Python `math` library? 
+What if we also want to be able to call this as `fcm.add` instead of `fcm.math.add`?
 In the `__init__.py` file, we can add
 ```python
 from . import math
-from .math import mult
+from .math import add
 ```
 Now we can type
 ```
 >>> import friendly_computing_machine as fcm
->>> fcm.mult(2,3)
+>>> fcm.add(2,3)
 6
 ```
