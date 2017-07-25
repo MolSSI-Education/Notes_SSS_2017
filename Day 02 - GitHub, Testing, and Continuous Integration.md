@@ -315,9 +315,9 @@ before_install:
   - pip install -e .
   
 script:
-  - py.test -v --cov=./
+  - py.test -v
   
 notifications:
     email: false
-  
+
 ```
