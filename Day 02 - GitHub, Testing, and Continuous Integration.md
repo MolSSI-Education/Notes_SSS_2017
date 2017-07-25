@@ -273,3 +273,51 @@ def test_mult(a, b, expected):
 
 [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) is a process in which we first implement the *tests* so we have a way to measure whether the code that we are writing is working during the process of writing and debugging.
 
+### Continuous integration
+
+[Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) is a process where our code is tested every time we push it to GitHub. This process is immensely useful because it allows us to fix bad code before it gets merged into the main repository branches, and all major software projects that have good programming practices use this principle.
+
+We'll be using the free service called [travis-ci](http://travis-ci.org) to do continuous integration.
+(Make sure to use `travis-ci.org` and not `travis-ci.com`, since you have to pay for the `.com` service.)
+
+You'll want to go to http://travis-ci.org to set this up and link it with your GitHub account.
+Once you've created your account, go to Travis's view of your repositories, and make sure to "Sync from GitHub" to get a view of the latest versions of your GitHub repos.
+We'll switch the `friendly-computing-machine` switch to ON.
+
+To tell Travis how to install and test our software automatically, we will create a file in our base github repo directory called `.travis.yml`:
+```YAML
+# After changing this file, check it o:
+#   http://lint.travis-ci.org/
+language: python
+
+# Run obs on container-based infrastructure, can be overridden per job
+sudo: false
+
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.5
+    - python: 3.6
+
+before_install:
+  # These things are really useful for debugging when things go wrong
+  - uname -a
+  - free -m
+  - df -h
+  - ulimit -a
+  - python -V
+  # Install environment via pip
+  - pip install --upgrade pip setuptools
+  - pip install pytest pytest-cov
+  - pip install numpy
+  - pip install codecov
+  # Install my code
+  - pip install -e .
+  
+script:
+  - py.test -v --cov=./
+  
+notifications:
+    email: false
+  
+```
