@@ -61,6 +61,11 @@ In your `~/SSS_2017/Gits/` folder (not in your `planets/` folder), you can clone
 ```bash
 git clone https://github.co/dgasmith/friendly-computing-machine.git
 ```
+Let's rename it:
+```
+mv friendly-computing-machine fcm
+cd fcm
+```
 Now if I list the directory with `ls`, I see
 ```
 LICENSE   README.md
@@ -77,9 +82,8 @@ We'll start by building a [Python module](https://docs.python.org/3/tutorial/mod
 Don't put all your Python code in the top level! Instead, create a subdirectory with the same name as your Python module, which should [follow PEP 8 module naming guidelines](https://www.python.org/dev/peps/pep-0008/#package-and-module-names).
 ```bash
 mkdir friendly_computing_machine
-cd friendly_computing_machine
 ```
-Now, we begain creating a file called `math.py`.
+Now, we begain creating a file called `friendly_computing_machine/math.py`.
 
 At the top of the header, write a docstring describing what your file does:
 ```python
@@ -120,3 +124,22 @@ This is the base file of the friendly-computing-machine!
 ```
 Documentation is crucial to any open-source project. Imagine if `numpy` had no documentation with it---who would be able to use it then?
 Always create documentation for your files and functions!
+
+Now we can go back to our base git directory `fcm/`, which we can now import
+```
+>>> import friendly_computing_machine as fcm
+>>> fcm.math.add(2,5)
+7
+```
+What if we also want to be able to multiply, using the Python `math` library? 
+In the `__init__.py` file, we can add
+```python
+from . import math
+from .math import mult
+```
+Now we can type
+```
+>>> import friendly_computing_machine as fcm
+>>> fcm.mult(2,3)
+6
+```
