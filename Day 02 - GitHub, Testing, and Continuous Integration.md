@@ -95,3 +95,28 @@ def add(arg1, arg2):
     """
     return 2 + 5
 ```
+Every file in Python is actually an importable script by default:
+```
+>>> import math
+```
+You can check where this imported file physically lives on your machine, since we want to be sure we're using our own `math.py` and not the system `math` module:
+```
+>>> print(math.__file__)
+/Users/daniel/SSS_2017/Gits/friendly-computing-machine/friendly-computing-machine/math.py
+```
+The current working directory (`.`) is the first thing that Python searches when you try to import a module.
+
+To run the function, we can write
+```
+>>> math.add(2, 5)
+7
+>>>
+```
+To make this a module, we need to create an `__init__.py` file in the `friendly-computing-machine/` module directory:
+```python
+"""
+This is the base file of the friendly-computing-machine!
+"""
+```
+Documentation is crucial to any open-source project. Imagine if `numpy` had no documentation with it---who would be able to use it then?
+Always create documentation for your files and functions!
