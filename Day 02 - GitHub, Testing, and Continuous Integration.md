@@ -2,13 +2,15 @@
 
 ## GitHub introduction
 
+-- Fill this in later --
+
 # Tue 25 Jul - afternoon 
 
-## GitHub integrations
+## GitHub integration
 
 GitHub integrations can help you make sure your software actually works on a large variety of hardware.
 
-### Creating a new GitHub repo
+### Creating a new GitHub project
 
 We'll start by creating a new repository.
 
@@ -47,6 +49,27 @@ MolSSI is currently working on guidance documentation
 
 Pick a name that you won't be ashamed to have on your professional outward GitHub profile.
 
+We chose `friendly-computing-machine`.
+
 #### Write a basic project description
 
 It's good to write a brief description of your project.
+
+### Clone the repo to work with it
+
+In your `~/SSS_2017/Gits/` folder (not in your `planets/` folder), you can clone the new repository.
+```bash
+git clone https://github.co/dgasmith/friendly-computing-machine.git
+```
+Now if I list the directory with `ls`, I see
+```
+LICENSE   README.md
+```
+Note that the `.gitignore` file is hidden by default. You'll need to use `ls -a` to see it
+```
+.         ..         .git        .gitignore LICENSE    README.md
+```
+
+### Building a Python module
+
+We'll start by building a Python module
