@@ -33,3 +33,20 @@ There's even a [Do What the Fuck You Want To](http://www.wtfpl.net/) license tha
 
 The [Open Source Initiative](https://opensource.org/) has a lot of great information to help guide you.
 All [MolSSI](http://molssi.org)-created software must follow the [OSI Open Source Definition](https://opensource.org/osd-annotated).
+The OSI maintains a list of [popular OSI-approved licenses](https://opensource.org/licenses).
+
+MolSSI is currently recommending youuse the [BSD 3-Clause license](https://opensource.org/licenses/BSD-3-Clause) for new projects.
+
+Projects like [`scipy`](https://www.scipy.org/scipylib/license.html) are permissively licensed.
+
+**If you do not explicitly provide a license, people cannot use your code since you are not explicitly granting them permission to use it and setting guidelines for how they can use it! Always remember to set a license.**
+
+MolSSI is currently working on guidance documentation 
+
+#### Choose a repo name
+
+Pick a name that you won't be ashamed to have on your professional outward GitHub profile.
+
+#### Write a basic project description
+
+It's good to write a brief description of your project.
