@@ -143,3 +143,42 @@ Now we can type
 >>> fcm.add(2,3)
 6
 ```
+
+Note that there's a `__pycache__` directory sitting around.
+What happens if we `git add __pycache__`?
+```bash
+$ git add __pycache__
+$ git status
+```
+Nothing happened! That's because that directory is excluded by our `.gitignore`.
+
+### Testing
+
+Tests are important to make sure our code works as expected.
+
+Now, we need a testing framework.
+In this case, we'll use [pytest](https://docs.pytest.org/en/latest/).
+To check if you have `pytest` correctly installed, we can check from our shell
+```bash
+$ python -c "import pytest"
+```
+If that gives an error, we can install via `conda`:
+```
+$ conda install --yes pytest
+```
+It's best to stay within the [conda](https://conda.io/docs/intro.html) framework if you have it installed!
+
+In our base git folder `fcm/` create a directory called `tests/`:
+```bash
+$ mkdir tests
+```
+Now create a test file `tests/test_math.py`
+```python
+"""
+Testing for the math.py module
+"""
+
+import friendly_computing_machine
+import pytest
+```
+
