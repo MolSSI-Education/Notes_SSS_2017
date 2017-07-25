@@ -184,11 +184,7 @@ import pytest
 def test_add():
     assert fcm.add(2, 5) == 7
 ```
-We can run the tests with
-```
-py.test -v
-```
-and see that it passes!
+Before we can run `py.test`, we have to install our package:
 
 ### Making the Python module installable
 
@@ -240,11 +236,19 @@ if __name__ == "__main__":
         zip_safe=True,
     )
 ```
-We can run the tests:
 
 Add to the `README.md` some info on how to install:
 ```
 To install in-place:
 pip install -e .
 ```
+
+### Running the tests
+
+We can run the tests with
+```
+py.test -v
+```
+and see that it passes!
+
 
