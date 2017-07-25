@@ -321,3 +321,10 @@ notifications:
     email: false
 
 ```
+We'll want to commit and push `.travis.yml` to our repository, and then we should see the travis job appear in our account on http://travis-ci.org where we can see a detailed output report of what succeeded and what failed.
+
+We've earned ourselves a badge! Click on the `Build:Passing` graphic from your project and select the "Markdown" format, and copy the Markdown source for your badge. It will look like this:
+```
+[![Build Status](https://travis-ci.org/dgasmith/friendly-computing-machine.svg?branch=master)](https://travis-ci.org/dgasmith/friendly-computing-machine)
+```
+Put it in your `README.md` at the top, commit, and push to your repo.
