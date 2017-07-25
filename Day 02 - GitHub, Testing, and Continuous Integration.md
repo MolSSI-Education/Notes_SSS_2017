@@ -328,3 +328,18 @@ We've earned ourselves a badge! Click on the `Build:Passing` graphic from your p
 [![Build Status](https://travis-ci.org/dgasmith/friendly-computing-machine.svg?branch=master)](https://travis-ci.org/dgasmith/friendly-computing-machine)
 ```
 Put it in your `README.md` at the top, commit, and push to your repo.
+
+### Code coverage
+
+How do we know how much of our code is actually being tested?
+
+You can check code coverage locally with `codecov`:
+```
+$ pip install pytest pytest-cov
+$ py.test -v --cov=./
+```
+This gets messy when there are lots of files, so online tools can be very helpful, especially if they test every version of the code we push to github.
+We can use a convenient online integration called http://codecov.io/ that will check for us and point out which parts of the code are not covered.
+Go to http://codecov.io/ and click "Sign Up", and then link your GitHub account.
+Enabe codecov testing of `friendly_compute_machine`.
+
