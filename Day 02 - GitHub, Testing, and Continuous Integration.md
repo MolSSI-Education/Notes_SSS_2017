@@ -98,6 +98,12 @@ def add(arg1, arg2):
     Function that adds two arguments.
     """
     return 2 + 5
+
+def mult(arg1, arg2):
+    """
+    Function that multiplies two arguments.
+    """
+    return 2 * 5    
 ```
 Every file in Python is actually an importable script by default:
 ```
@@ -135,7 +141,7 @@ What if we also want to be able to call this as `fcm.add` instead of `fcm.math.a
 In the `__init__.py` file, we can add
 ```python
 from . import math
-from .math import add
+from .math import add, mult
 ```
 Now we can type
 ```
@@ -251,4 +257,19 @@ py.test -v
 ```
 and see that it passes!
 
+Instead of coding up many different values to feed through `fcm.add`, we can use [parameterized tests](https://docs.pytest.org/en/latest/example/parametrize.html) to feed a lot of possibilities through:
+```
+testdata = [
+    (2, 5, 10),
+    (1, 2, 2),
+    (11, 9, 99),
+    (11, 0, 0),
+    (0, 0, 0)
+    ]
+@pytest.mark.parameterize("a,b,expected", testdata)
+def test_mult(a, b, expected):
+    assert fcm.math.mult(a, b) == expected
+```
+
+[Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) is a process in which we first implement the *tests* so we have a way to measure whether the code that we are writing is working during the process of writing and debugging.
 
