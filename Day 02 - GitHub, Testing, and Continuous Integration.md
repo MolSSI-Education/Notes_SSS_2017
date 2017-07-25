@@ -72,4 +72,19 @@ Note that the `.gitignore` file is hidden by default. You'll need to use `ls -a`
 
 ### Building a Python module
 
-We'll start by building a Python module
+We'll start by building a [Python module](https://docs.python.org/3/tutorial/modules.html).
+
+Don't put all your Python code in the top level! Instead, create a subdirectory with the same name as your Python module, which should [follow PEP 8 module naming guidelines](https://www.python.org/dev/peps/pep-0008/#package-and-module-names).
+```bash
+mkdir friendly_computing_machine
+cd friendly_computing_machine
+```
+Now, we begain creating a file called `math.py`.
+
+At the top of the header, write a docstring describing what your file does:
+```
+"""
+A small set of functions for doing math operations.
+"""
+```
+Now we can start writing functions.
