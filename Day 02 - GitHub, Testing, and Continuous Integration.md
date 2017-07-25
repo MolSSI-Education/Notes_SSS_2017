@@ -178,9 +178,19 @@ Now create a test file `tests/test_math.py`
 Testing for the math.py module
 """
 
-import friendly_computing_machine
+import friendly_computing_machine as fcm
 import pytest
+
+def test_add():
+    assert fcm.add(2, 5) == 7
 ```
+We can run the tests with
+```
+py.test -v
+```
+and see that it passes!
+
+### Making the Python module installable
 
 We'll start with a preconfigured `setup.py`, since it's much easier that way:
 ```python
@@ -229,4 +239,12 @@ if __name__ == "__main__":
         ],
         zip_safe=True,
     )
-    ```
+```
+We can run the tests:
+
+Add to the `README.md` some info on how to install:
+```
+To install in-place:
+pip install -e .
+```
+
