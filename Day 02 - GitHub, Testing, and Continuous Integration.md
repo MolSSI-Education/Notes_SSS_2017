@@ -343,3 +343,96 @@ We can use a convenient online integration called http://codecov.io/ that will c
 Go to http://codecov.io/ and click "Sign Up", and then link your GitHub account.
 Enabe codecov testing of `friendly_compute_machine`.
 
+# Tue 26 Jul - Morning
+### Building Libraries and working in teams
+
+Build libraries instead of stand alone programs
+Each file of the library should contain related functions
+Examples of libraries are numpy, sci py.
+Small tests to avoid duplication of errors in team. Also helps build a
+more modular code
+Meet with your team. Probably every week.
+
+### Coding style
+
+Coding style: each language has standars. For instance, Python has
+the [PEP8 standard] (https://www.python.org/dev/peps/pep-0008/) 
+http://pep8.org. 
+
+mixedCase
+CamelCase
+snake_case: Used in Python!
+
+Python convention uses snake_case for everything: variables, functions, etc. 
+Except for classes, where we use CamelCase.
+
+Spaces between coma and argument when specyfing arguments
+
+Nice [tool to help you comply with PEP8] (https://github.com/google/yapf)
+
+[More resources to checkout] (http://python-guide-pt-br.readthedocs.io/en/latest/writing/style/)
+
+### Testing
+
+Write many tests! As soon as you write your function, develop a test 
+to validate it.
+
+Use code coverage: figure out how much of the code is tested.
+
+Think about the extreme cases that might break down your function. 
+Division by zero? What if you input a different data type (i.e. float 
+instead of int)
+
+### Documentation
+
+Comment  the function you're developing with docstrings. 
+Specify the arguments and its type. Writing comments about 
+the function can help to reflect on the design of the function.
+
+Don't write obvious comments, for example
+
+a += 1  # increment a by one
+
+This only makes your code more verbose!
+
+Use  variables names that have meaning
+
+### Task assignment
+
+Small tasks.
+
+Create issues on git and assign it to somebody. This works ok for small teams.
+
+Big projects use [issue tracking software] (https://www.atlassian.com/software/jira). These are project management tools and can serve to track down progress.
+
+### Forking and pull request
+
+Use forks to implement to your features. The advantages are that your team
+can do code reviews and this can improve quality of the code.
+
+[Mozilla lab] (https://mozillascience.github.io/codeReview/intro.html) has a good overview of code review practices and how it can be
+helpful.
+
+[Code review] (https://codereview.stackexchange.com) also another nice
+source.
+
+Pair programming. One programs and the other observes. The observer can
+provide suggestions on how to implement a specific task. 
+
+### Minimize conflicts in Git
+
+A commit should represent a small, "complete" task that works. 
+For instance, commit the LJ potential function given the distance.
+
+Commit frequently. This is the basis of agile develepment.
+
+Usually, people like to start the commit message with a verb. For example
+"Add Lennard Jones Potential". If you type 
+
+git commit
+
+your default text editor will appear and you can add a longer message if 
+needed. 
+
+[Smart Git] (http://www.syntevo.com/smartgit/) provides a graphical access
+to Git repos.
